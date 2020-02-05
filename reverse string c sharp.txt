@@ -1,0 +1,41 @@
+Source:CoderByte's Challenge
+
+Question:
+Have the function FirstReverse(str) take the str parameter being passed and return the string in reversed order. For example: if the input string is "Hello World and Coders" then your program should return the string sredoC dna dlroW olleH.
+
+Programming Language: C#
+
+CPU Time: 0.016s
+
+Psuedocode:
+
+1) Check if empty is string, return the string
+2) If not, convert string to characters' array
+3) Pick character from array in reverse order and append it in other string.
+4) when done, return the reversed string
+
+Code:
+using System;
+
+class MainClass {
+
+  public static string FirstReverse(string str) {
+
+    string returningText="";
+           if(str.Trim().Length>0){
+			   var split=str.ToCharArray();
+			   for(int i=split.Length-1;i>=0;i--){
+				  returningText+=split[i]; 
+			   }
+			   return returningText;
+			   
+		   }
+    return str;
+
+  }
+
+  static void Main() {  
+    Console.WriteLine(FirstReverse(Console.ReadLine()));
+  } 
+
+}
