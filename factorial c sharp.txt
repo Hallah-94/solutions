@@ -1,0 +1,30 @@
+Question:
+
+Find factorial of given number
+
+Approach: Recursive approach
+
+CPU Time: 0.016s
+
+Code:
+
+using System;
+
+namespace RealTest
+{
+    public static class Calculation
+    {
+        public static ulong findFactorial(ulong number)
+        {
+           if(number==1){
+			return 1;   
+		   }
+			return number*Calculation.findFactorial(number-1);
+        }
+
+        public static void Main(string[] args)
+        {
+            Console.WriteLine(Calculation.findFactorial(7));
+        }
+    }
+}
