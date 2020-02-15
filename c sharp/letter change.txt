@@ -1,0 +1,45 @@
+Question (Source: CoderByte)
+
+Have the function LetterChanges(str) take the str parameter being passed and modify it using
+ the following algorithm. Replace every letter in the string with the letter following it in the alphabet 
+(ie. c becomes d, z becomes a). Then capitalize every vowel in this new string (a, e, i, o, u) and finally 
+return this modified string.
+
+Compile:	0.172s
+Execute:	0.016s
+Memory:	0b
+CPU:	0.031s
+
+
+Solution:
+
+using System;
+
+namespace RealTest
+{
+    public static class Test
+    {
+        public static string LetterChange(string str)
+        {
+             var text=str.ToLower().ToCharArray();
+			 for(int i=0;i<text.Length;i++){
+               if((int) text[i]>=97 && (int) text[i]<=122){
+                   text[i]+= (char)1;
+				   if((int)text[i]==123){
+				      text[i]='a';	
+				   }
+				   if(text[i]=='a' || text[i]=='e' || text[i]=='i' || text[i]=='o' || text[i]=='u'){
+					  text[i]-=(char)32;
+				   }
+               }		
+			}
+           
+			return new string(text);			
+        }
+
+        public static void Main(string[] args)
+        {
+            Console.WriteLine(Test.LetterChange("coderbyte"));
+        }
+    }
+}
